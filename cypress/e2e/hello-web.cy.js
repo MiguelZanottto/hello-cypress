@@ -1,12 +1,10 @@
-describe('First Test', () => {
-    it('Web okay', () => {
+describe('Home first view behaviour', () => {
+    beforeEach(() => {
         cy.visit('http://localhost:3030')
     })
-})
-
-describe('Second Test', () => {
-    it('shoud focus the form when visit the site', () => {
-        cy.visit('http://localhost:3030')
-        cy.get('input').first().should('have.focus')
+ 
+    it('Input has focus on load', () => {  
+        cy.focused()
+            .should('have.class', 'new-todo')
     })
 })
